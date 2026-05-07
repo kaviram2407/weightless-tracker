@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weightless Daily Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- html2canvas for image export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="space-background"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <main class="glass-container float-animation">
+        <header>
+            <button id="export-btn" class="icon-btn" title="Export as PNG">&#128247;</button>
+            <div class="header-center">
+                <div class="date-controls">
+                    <button id="prev-date" class="icon-btn">&larr;</button>
+                    <h1 id="current-date-display">Today</h1>
+                    <button id="next-date" class="icon-btn">&rarr;</button>
+                </div>
+                <div id="current-time-display">--:--</div>
+            </div>
+            <div style="width: 40px;"></div> <!-- Spacer for centering -->
+        </header>
+
+        <section class="input-section">
+            <input type="text" id="new-activity-input" placeholder="Enter a new task..." autocomplete="off">
+            <input type="number" id="new-activity-time" placeholder="Mins" min="1" autocomplete="off">
+            <button id="add-activity-btn">Add</button>
+        </section>
+
+        <ul id="activity-list">
+            <!-- Activity items will be appended here -->
+        </ul>
+    </main>
+
+    <!-- Custom Modal Overlay -->
+    <div id="custom-modal-overlay" class="modal-overlay">
+        <div class="glass-container modal-box">
+            <h2 id="modal-title">Title</h2>
+            <p id="modal-message">Message goes here</p>
+            <div id="modal-input-container" class="hidden">
+                <input type="number" id="modal-input" autocomplete="off" placeholder="Your answer...">
+            </div>
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="modal-btn cancel-btn">Cancel</button>
+                <button id="modal-confirm-btn" class="modal-btn confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
